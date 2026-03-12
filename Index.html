@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Dice Game - Professional Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="stats-container">
+        <div class="balance-display">
+            WALLET: <span id="balanceAmount">1,000,000</span> VND
+        </div>
+    </div>
+
+    <div class="main-app">
+        <header>
+            <h1>DICE ELITE</h1>
+            <div id="adminIndicator" class="hidden">
+                SIGNAL: <span id="nextResultHint">---</span>
+            </div>
+        </header>
+
+        <section class="dice-board">
+            <div class="dice-wrapper">
+                <div class="dice" id="d1">?</div>
+                <div class="dice" id="d2">?</div>
+                <div class="dice" id="d3">?</div>
+            </div>
+            <div class="score-summary">
+                TOTAL: <span id="currentScore">0</span>
+            </div>
+        </section>
+
+        <section class="controls">
+            <input type="number" id="betInput" placeholder="Enter Amount...">
+            <input type="text" id="accessCode" placeholder="Access Code" oninput="verifyAccessCode()">
+            
+            <div class="action-buttons">
+                <button class="btn btn-odd" onclick="initiateRoll('ODD')">ODD (Lẻ)</button>
+                <button class="btn btn-even" onclick="initiateRoll('EVEN')">EVEN (Chẵn)</button>
+            </div>
+        </section>
+
+        <footer id="statusFeedback"></footer>
+    </div>
+
+    <div class="analytics-panel">
+        <h3>MATCH HISTORY</h3>
+        <div class="history-grid" id="historyContainer"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
